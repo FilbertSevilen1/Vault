@@ -41,11 +41,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
     <>
       {/* Sidebar container */}
       <aside 
-        className={`relative z-30 flex flex-col h-screen bg-zinc-950/80 md:bg-zinc-950/40 border-r border-white/5 backdrop-blur-xl transition-all duration-300 overflow-hidden shrink-0 ${
-          isOpen ? 'w-64 opacity-100' : 'w-0 opacity-0 pointer-events-none !border-r-0'
+        className={`fixed top-0 bottom-0 left-0 z-30 flex flex-col w-64 bg-zinc-950/80 md:bg-zinc-950/40 border-r border-white/5 backdrop-blur-xl transition-all duration-300 ${
+          isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 pointer-events-none'
         }`}
       >
-        <div className="w-64 flex flex-col h-full shrink-0">
+        <div className="flex flex-col h-full">
           {/* Logo Section */}
           <div className="flex items-center justify-between h-20 px-6 border-b border-white/5">
             <div className="flex items-center gap-2.5">

@@ -87,7 +87,9 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) =
   };
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between h-20 px-6 bg-zinc-950/40 border-b border-white/5 backdrop-blur-md">
+    <header className={`fixed top-0 right-0 z-20 flex items-center justify-between h-20 px-6 bg-zinc-950/40 border-b border-white/5 backdrop-blur-md transition-all duration-300 ${
+      sidebarOpen ? 'left-0 md:left-64' : 'left-0'
+    }`}>
       {/* Left section: mobile toggle and page title */}
       <div className="flex items-center gap-4">
         <button 

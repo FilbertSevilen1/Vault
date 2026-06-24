@@ -126,13 +126,17 @@ export const App: React.FC = () => {
       <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
 
       {/* Main container area */}
-      <div className="flex-1 flex flex-col min-w-0 w-screen md:w-auto shrink-0 md:shrink z-10 transition-all duration-300">
+      <div className={`flex-1 flex flex-col min-w-0 z-10 transition-all duration-300 ${
+        sidebarOpen 
+          ? 'translate-x-64 md:translate-x-0 md:pl-64' 
+          : 'translate-x-0 md:pl-0'
+      }`}>
         
         {/* Top Header bar */}
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         {/* Dynamic sliding page contents */}
-        <main className="flex-1 p-6 md:p-8 overflow-y-auto">
+        <main className="flex-1 pt-[104px] px-6 pb-6 md:pt-[112px] md:px-8 md:pb-8 overflow-y-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
