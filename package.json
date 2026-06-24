@@ -1,0 +1,55 @@
+{
+  "name": "vault",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i src/index.css -o src/tailwind.css",
+    "watch:css": "npx @tailwindcss/cli -i src/index.css -o src/tailwind.css --watch",
+    "start": "concurrently \"npm run watch:css\" \"react-scripts start\"",
+    "dev": "concurrently \"npm run watch:css\" \"react-scripts start\"",
+    "build": "npm run build:css && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "oxlint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
+    "dexie": "^4.4.4",
+    "dexie-react-hooks": "^4.4.0",
+    "framer-motion": "^12.41.0",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.21.0",
+    "papaparse": "^5.5.4",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-is": "^19.2.7",
+    "react-scripts": "^5.0.1",
+    "recharts": "^3.9.0",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.0.0",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "@types/node": "^24.13.2",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "concurrently": "^8.2.2",
+    "oxlint": "^1.69.0",
+    "typescript": "~6.0.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
