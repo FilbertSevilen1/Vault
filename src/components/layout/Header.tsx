@@ -5,10 +5,11 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import db from '../../db/vaultDb';
 
 interface HeaderProps {
-  setMobileOpen: (open: boolean) => void;
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ setMobileOpen }) => {
+export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
   const { activeTab, setCommandPaletteOpen, setQuickAddOpen, username, currency } = useVaultStore();
   const [showInsights, setShowInsights] = useState(false);
   const [insight, setInsight] = useState<string | null>(null);
@@ -90,8 +91,9 @@ export const Header: React.FC<HeaderProps> = ({ setMobileOpen }) => {
       {/* Left section: mobile toggle and page title */}
       <div className="flex items-center gap-4">
         <button 
-          onClick={() => setMobileOpen(true)}
-          className="p-2 -ml-2 text-zinc-400 hover:text-white md:hidden hover:bg-white/5 rounded-xl transition-all"
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          className="p-2 -ml-2 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all cursor-pointer"
+          title={sidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
         >
           <Menu size={20} />
         </button>

@@ -27,7 +27,7 @@ export const App: React.FC = () => {
     setQuickAddOpen 
   } = useVaultStore();
 
-  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   // 1. Sync theme class on mount and change
   useEffect(() => {
@@ -123,13 +123,13 @@ export const App: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none z-0" />
 
       {/* Sidebar navigation panel */}
-      <Sidebar mobileOpen={mobileSidebarOpen} setMobileOpen={setMobileSidebarOpen} />
+      <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
 
       {/* Main container area */}
-      <div className="flex-1 flex flex-col md:pl-64 min-w-0 z-10">
+      <div className="flex-1 flex flex-col min-w-0 w-screen md:w-auto shrink-0 md:shrink z-10 transition-all duration-300">
         
         {/* Top Header bar */}
-        <Header setMobileOpen={setMobileSidebarOpen} />
+        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         {/* Dynamic sliding page contents */}
         <main className="flex-1 p-6 md:p-8 overflow-y-auto">
