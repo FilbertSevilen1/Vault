@@ -90,74 +90,76 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) =
     <header className={`fixed top-0 right-0 z-20 flex items-center justify-between h-20 px-6 bg-zinc-950/40 border-b border-white/5 backdrop-blur-md transition-all duration-300 ${
       sidebarOpen ? 'max-md:left-0 md:left-64' : 'left-0'
     }`}>
-      {/* Left section: mobile toggle and page title */}
-      <div className="flex items-center gap-4">
-        <button 
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="p-2 -ml-2 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all cursor-pointer"
-          title={sidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
-        >
-          <Menu size={20} />
-        </button>
-        <div>
-          <h1 className="text-xl md:text-2xl font-bold tracking-tight text-white m-0">
-            {getTabTitle()}
-          </h1>
-          <p className="text-xs text-zinc-500 hidden md:block">
-            Hello, {username || 'User'} · Welcome back
-          </p>
-        </div>
-      </div>
-
-      {/* Right section: search prompt, insights, and quick add */}
-      <div className="flex items-center gap-3">
-        {/* Search / Command palette launcher */}
-        <button 
-          onClick={() => setCommandPaletteOpen(true)}
-          className="hidden md:flex items-center gap-3.5 px-4 h-10 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 text-zinc-400 hover:text-zinc-300 text-sm tracking-wide transition-all cursor-pointer"
-        >
-          <Search size={15} />
-          <span>Search or commands...</span>
-          <kbd className="text-[10px] bg-zinc-800 border border-zinc-700 px-1.5 py-0.5 rounded text-zinc-500 font-mono">
-            ⌘K
-          </kbd>
-        </button>
-
-        {/* Dynamic Insights Alert */}
-        <div className="relative">
+      <div className="w-full max-w-7xl mx-auto flex items-center justify-between">
+        {/* Left section: mobile toggle and page title */}
+        <div className="flex items-center gap-4">
           <button 
-            onClick={() => setShowInsights(!showInsights)}
-            className={`p-2.5 rounded-xl border transition-all cursor-pointer ${
-              showInsights 
-                ? 'bg-violet-500/10 border-violet-500 text-violet-400' 
-                : 'bg-white/[0.02] border-white/5 text-zinc-400 hover:text-white hover:border-white/10'
-            }`}
-            title="Vault Insights"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="p-2 -ml-2 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all cursor-pointer"
+            title={sidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
           >
-            <Bell size={18} />
+            <Menu size={20} />
           </button>
-          
-          {showInsights && (
-            <div className="absolute right-0 mt-3 w-80 glass-panel p-4 z-40 border border-white/10 shadow-2xl">
-              <div className="flex items-center gap-2 mb-3">
-                <Sparkles size={16} className="text-violet-400" />
-                <span className="text-xs font-bold uppercase tracking-wider text-violet-400">Vault AI Insights</span>
-              </div>
-              <p className="text-xs text-zinc-300 leading-relaxed">
-                {insight}
-              </p>
-            </div>
-          )}
+          <div>
+            <h1 className="text-xl md:text-2xl font-bold tracking-tight text-white m-0">
+              {getTabTitle()}
+            </h1>
+            <p className="text-xs text-zinc-500 hidden md:block">
+              Hello, {username || 'User'} · Welcome back
+            </p>
+          </div>
         </div>
 
-        {/* Quick Add Transaction */}
-        <button
-          onClick={() => setQuickAddOpen(true)}
-          className="flex items-center gap-1.5 px-4 h-10 bg-white hover:bg-zinc-200 text-black font-semibold rounded-xl text-sm transition-all cursor-pointer shadow-lg shadow-white/5"
-        >
-          <Plus size={16} />
-          <span className="hidden sm:inline">Add Transaction</span>
-        </button>
+        {/* Right section: search prompt, insights, and quick add */}
+        <div className="flex items-center gap-3">
+          {/* Search / Command palette launcher */}
+          <button 
+            onClick={() => setCommandPaletteOpen(true)}
+            className="hidden md:flex items-center gap-3.5 px-4 h-10 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 text-zinc-400 hover:text-zinc-300 text-sm tracking-wide transition-all cursor-pointer"
+          >
+            <Search size={15} />
+            <span>Search or commands...</span>
+            <kbd className="text-[10px] bg-zinc-800 border border-zinc-700 px-1.5 py-0.5 rounded text-zinc-500 font-mono">
+              ⌘K
+            </kbd>
+          </button>
+
+          {/* Dynamic Insights Alert */}
+          <div className="relative">
+            <button 
+              onClick={() => setShowInsights(!showInsights)}
+              className={`p-2.5 rounded-xl border transition-all cursor-pointer ${
+                showInsights 
+                  ? 'bg-violet-500/10 border-violet-500 text-violet-400' 
+                  : 'bg-white/[0.02] border-white/5 text-zinc-400 hover:text-white hover:border-white/10'
+              }`}
+              title="Vault Insights"
+            >
+              <Bell size={18} />
+            </button>
+            
+            {showInsights && (
+              <div className="absolute right-0 mt-3 w-80 glass-panel p-4 z-40 border border-white/10 shadow-2xl">
+                <div className="flex items-center gap-2 mb-3">
+                  <Sparkles size={16} className="text-violet-400" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-violet-400">Vault AI Insights</span>
+                </div>
+                <p className="text-xs text-zinc-300 leading-relaxed">
+                  {insight}
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Quick Add Transaction */}
+          <button
+            onClick={() => setQuickAddOpen(true)}
+            className="flex items-center gap-1.5 px-4 h-10 bg-white hover:bg-zinc-200 text-black font-semibold rounded-xl text-sm transition-all cursor-pointer shadow-lg shadow-white/5"
+          >
+            <Plus size={16} />
+            <span className="hidden sm:inline">Add Transaction</span>
+          </button>
+        </div>
       </div>
     </header>
   );
