@@ -152,10 +152,10 @@ export const Analytics: React.FC = () => {
       </div>
 
       {/* 2. Top Charts Row: Cash Flow area map & Category Breakdowns */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg-grid-cols-3 gap-6">
         
         {/* Cashflow Trends double Area */}
-        <div className="glass-panel p-5 flex flex-col h-80 lg:col-span-2">
+        <div className="glass-panel p-5 flex flex-col h-80 lg-col-span-2">
           <div className="mb-4">
             <h3 className="text-xs font-bold text-white uppercase tracking-wider">Monthly Cash Flow</h3>
             <p className="text-xs text-zinc-500">Earnings vs Expenses comparisons</p>

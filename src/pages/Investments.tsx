@@ -182,7 +182,7 @@ export const Investments: React.FC = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md-grid-cols-3 gap-4">
         {/* Portfolio Valuation */}
         <div className="glass-panel p-5 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-24 h-24 bg-violet-500/5 rounded-full blur-2xl pointer-events-none" />
@@ -222,10 +222,10 @@ export const Investments: React.FC = () => {
       </div>
 
       {/* 2. Visual Allocation & Ledger Table */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg-grid-cols-3 gap-6">
         
         {/* Allocation Donut Chart */}
-        <div className="glass-panel p-5 flex flex-col items-center justify-center lg:col-span-1 h-80">
+        <div className="glass-panel p-5 flex flex-col items-center justify-center lg-col-span-1 h-80">
           <div className="w-full text-left mb-2">
             <h3 className="text-xs font-bold text-white uppercase tracking-wider">Asset Allocation</h3>
           </div>
@@ -276,7 +276,7 @@ export const Investments: React.FC = () => {
         </div>
 
         {/* Holdings List Table */}
-        <div className="glass-panel lg:col-span-2 overflow-hidden flex flex-col">
+        <div className="glass-panel lg-col-span-2 overflow-hidden flex flex-col">
           <div className="p-5 border-b border-white/5 flex items-center justify-between">
             <h3 className="text-xs font-bold text-white uppercase tracking-wider">Asset Listings</h3>
           </div>
