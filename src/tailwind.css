@@ -2397,6 +2397,17 @@
       opacity: 50%;
     }
   }
+  .max-md\:left-0 {
+    @media (width < 48rem) {
+      left: 0;
+    }
+  }
+  .max-md\:translate-x-64 {
+    @media (width < 48rem) {
+      --tw-translate-x: calc(var(--spacing) * 64);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
   .sm\:inline {
     @media (width >= 40rem) {
       display: inline;
@@ -2479,11 +2490,6 @@
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-zinc-950) 40%, transparent);
       }
-    }
-  }
-  .md\:p-8 {
-    @media (width >= 48rem) {
-      padding: calc(var(--spacing) * 8);
     }
   }
   .md\:p-10 {

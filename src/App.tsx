@@ -128,7 +128,7 @@ export const App: React.FC = () => {
       {/* Main container area */}
       <div className={`flex-1 flex flex-col min-w-0 z-10 transition-all duration-300 ${
         sidebarOpen 
-          ? 'translate-x-64 md:translate-x-0 md:pl-64' 
+          ? 'max-md:translate-x-64 md:pl-64' 
           : 'translate-x-0 md:pl-0'
       }`}>
         
